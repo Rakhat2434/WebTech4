@@ -1,0 +1,189 @@
+/* ===============================
+   Unified Dark Theme (All Parts)
+   =============================== */
+:root {
+  --bg: linear-gradient(135deg, #0f172a 0%, #1b2a4a 100%);
+  --accent: #7dd3fc;
+  --text: #e6f0ff;
+  --muted: rgba(230, 240, 255, 0.7);
+  --card: rgba(255, 255, 255, 0.06);
+}
+
+/* Base Styles */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ===============================
+   Navbar
+   =============================== */
+.navbar {
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.nav-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--accent);
+  letter-spacing: -0.5px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+  font-weight: 500;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent);
+}
+
+/* ===============================
+   Hero Section
+   =============================== */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: var(--muted);
+}
+
+/* ===============================
+   Container & Cards
+   =============================== */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  color: var(--muted);
+}
+
+.project-card img {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* ===============================
+   Footer
+   =============================== */
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  color: var(--muted);
+  font-size: 13px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 40px;
+}
+
+/* ===============================
+   Task 0 — Responsive Typography
+   =============================== */
+
+/* Mobile (default) */
+.title { font-size: 26px; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.2rem; }
+p  { font-size: 0.9rem; }
+
+/* Tablet */
+@media (min-width: 600px) and (max-width: 991px) {
+  .title { font-size: 36px; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.4rem; }
+  p  { font-size: 1rem; }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  .title { font-size: 44px; }
+  h2 { font-size: 2.5rem; }
+  h3 { font-size: 1.6rem; }
+  p  { font-size: 1.1rem; }
+}
+
+/* ===============================
+   Task 1 — Responsive Boxes Layout
+   =============================== */
+.boxes-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.box {
+  flex: 1 1 100%; /* Mobile: stacked vertically */
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 40px 20px;
+  text-align: center;
+  font-weight: 700;
+  min-width: 150px;
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 600px) and (max-width: 991px) {
+  .box {
+    flex: 1 1 calc(50% - 10px);
+  }
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 992px) {
+  .box {
+    flex: 1 1 calc(33.333% - 14px);
+  }
+}
+
+.hint {
+  margin-top: 10px;
+  font-style: italic;
+  color: var(--accent);
+}
